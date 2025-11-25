@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Primary */
+  --Soft-red: hsl(5, 85%, 63%);
+  --Soft-orange: hsl(35, 77%, 62%);
+  /* Neutral */
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+h1{
+    font-weight: 900;
+    font-size: 2.6em;
+    line-height: 1;
+    color: var(--Very-dark-blue);
+    margin: .3em 0em 0em 0em;
+}
+
+h2{
+    color: var(--Soft-orange);
+    margin: 0;
+}
+
+h3{
+    color: var(--Very-dark-blue);
+    font-size: 1.1em;
+    
+}
+
+p{
+    line-height: 1.5;
+    color: var(--Dark-grayish-blue);
+    font-size: .95em;
+}
+
+body{
+    padding: 0em 1em 1em 1em;
+    margin: 0;
+    max-width: 100dvw;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 1em;
+    height: 3.5em;
+    background-color: var(--Off-white);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 3.5em;
+}
+
+.first button{
+    background-color: var(--Soft-orange);
+    border: none;
+    width: 50%;
+    height: 3em;
+    color: var(--Very-dark-blue);
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: .2em;
+}
+
+.first img{
+    width: 100%;
+}
+
+.second{
+    background-color: var(--Very-dark-blue);
+    color: var(--Off-white);
+    padding: 1em;
+}
+
+.second .mid{
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: var(--Dark-grayish-blue);
+}
+
+
+.third{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.third p {
+    font-size: .9em;
+}
+
+.third .lower{
+    display: flex;
+    flex: 2;
+    gap: 1em;
+}
+
+.third .right{
+    flex: 2;
+}
+
+.third img {
+    flex: 1;
+    height: 10em;
+}
+
+.menuBtn{
+    border: none;
+    background-color: var(--Off-white);
+}
+
+.menu{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    right: 0;
+    background-color: antiquewhite;
+    gap: 1em;
+}
+
+.menu button{
+    background-color: antiquewhite;
+}
+
+
+
+
+
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
