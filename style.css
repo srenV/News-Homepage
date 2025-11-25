@@ -1,21 +1,31 @@
+/* ============================================================
+   FONTS AND COLOR VARIABLES
+   ============================================================ */
+
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  /* Primary */
+  /* Primary color palette */
   --Soft-red: hsl(5, 85%, 63%);
   --Soft-orange: hsl(35, 77%, 62%);
-  /* Neutral */
+  /* Neutral color palette */
   --Off-white: hsl(36, 100%, 99%);
   --Grayish-blue: hsl(233, 8%, 79%);
   --Dark-grayish-blue: hsl(236, 13%, 42%);
   --Very-dark-blue: hsl(240, 100%, 5%);
 }
 
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+
 *{
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+   scrollbar-width: none;
 }
 
+/* Heading styles */
 h1{
     font-weight: 900;
     font-size: 2.6em;
@@ -35,39 +45,62 @@ h3{
     
 }
 
+/* Paragraph styles */
 p{
     line-height: 1.5;
     color: var(--Dark-grayish-blue);
     font-size: .95em;
 }
 
-body{
-    padding: 0em 1em 1em 1em;
+/* ============================================================
+   LAYOUT STRUCTURE
+   ============================================================ */
+
+body{ 
     margin: 0;
     max-width: 100dvw;
+   
 }
 
+/* Header section with navigation */
 header{
     display: flex;
     justify-content: space-between;
     position: sticky;
     top: 0;
     padding: 1em;
-    height: 3.5em;
+    height: 4.5em;
     background-color: var(--Off-white);
+    z-index: 1;
 }
 
+header img{
+    scale: 60%;
+}
+
+/* Main content container */
 main{
+    padding: 0em 1em 1em 1em;
     display: flex;
     flex-direction: column;
     gap: 4em;
+    /* filter: blur(1em); */
 }
 
+/* Footer section */
 footer{
     display: flex;
     justify-content: center;
     align-items: end;
     height: 3.5em;
+}
+
+/* ============================================================
+   HERO SECTION (First)
+   ============================================================ */
+
+#desktopImage{
+    display: none;
 }
 
 .first button{
@@ -85,10 +118,22 @@ footer{
     width: 100%;
 }
 
+/* ============================================================
+   NEWS SIDEBAR SECTION (Second)
+   ============================================================ */
+
 .second{
     background-color: var(--Very-dark-blue);
     color: var(--Off-white);
     padding: 1em;
+}
+
+.second h3{
+    color: var(--Off-white);
+}
+
+.second p{
+    color: var(--Grayish-blue);
 }
 
 .second .mid{
@@ -97,6 +142,9 @@ footer{
     border-color: var(--Dark-grayish-blue);
 }
 
+/* ============================================================
+   ARTICLES GRID SECTION (Third)
+   ============================================================ */
 
 .third{
     display: flex;
@@ -123,24 +171,44 @@ footer{
     height: 10em;
 }
 
+/* ============================================================
+   MOBILE MENU STYLES
+   ============================================================ */
+
 .menuBtn{
     border: none;
     background-color: var(--Off-white);
+    scale: 150%;
 }
 
+/* Mobile menu drawer */
 .menu{
     display: none;
     flex-direction: column;
-    height: 100%;
+    height: 100dvh;
     width: 70%;
     position: absolute;
     right: 0;
-    background-color: antiquewhite;
+    background-color: var(--Off-white);
     gap: 1em;
+    margin: -1em;
+    padding-top: 8em;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
 }
 
 .menu button{
-    background-color: antiquewhite;
+    background-color: var(--Off-white);
+}
+
+.menuCloseBtn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    border: none;
 }
 
 
@@ -148,6 +216,10 @@ footer{
 
 
 
+
+/* ============================================================
+   ATTRIBUTION / FOOTER TEXT
+   ============================================================ */
 
 .attribution {
   font-size: 11px;
@@ -155,4 +227,148 @@ footer{
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* ============================================================
+   DESKTOP LAYOUT (min-width: 500px)
+   ============================================================ */
+
+@media (min-width: 500px) {
+    /* Desktop body layout */
+    body{
+        height: 100dvh;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Show desktop images, hide mobile images */
+    #desktopImage{
+        display: flex;
+    }
+
+    #mobileImage {
+        display: none;
+    }
+
+    /* Desktop header styles */
+    header{
+        width: 75%;
+        margin-bottom: 1em;
+    }
+
+    header img{
+        scale: 100%;
+    }
+
+    /* Hide mobile menu button on desktop */
+    .menuBtn{
+        display: none;
+    }
+
+    .menuCloseBtn{
+        display: none;
+    }
+    
+    /* Desktop menu navigation */
+    .menu{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    position: unset;
+    background-color: none;
+    gap: 2em;
+    margin: 0;
+    padding-top: 0;
+    }
+
+    /* Desktop grid layout: hero section + sidebar + articles */
+    main{
+        display: grid;
+        grid-template-areas: 
+        "first first second"
+        "first first second"
+        "third third third";
+        width: 75%;
+        gap: 1.5em;
+    }
+
+    h1{
+        font-size: 3em;
+    }
+
+    .first p {
+        font-size: .85em;
+        margin-bottom: 1.5em;
+    }
+
+    .first button{
+        height: 2.5em;
+        font-size: 1em;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    /* Hero section area */
+    .first{
+        grid-area: first;
+    }
+
+    .firstLower{
+        display: flex;
+    }
+
+    .firstLeft{
+        flex: 1;
+    }
+    .firstRight{
+        flex: 1;
+    }
+
+    /* News sidebar area */
+    .second{
+        grid-area: second;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .second h2{
+        font-size: 2.2em;
+    }
+
+    /* Articles grid area */
+    .third {
+        padding-top: 2em;
+        grid-area: third;
+        flex-direction: row;
+        gap: 1.5em;
+    }
+
+    .third h2{
+        font-size: 2em;
+    }
+
+    .third h3{
+        margin-block: .5em;
+        font-size: 1em;
+    }
+
+    .third p{
+        margin: 0;
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Footer positioning */
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
 }
