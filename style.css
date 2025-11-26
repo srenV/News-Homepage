@@ -27,8 +27,8 @@
 
 /* Heading styles */
 h1{
-    font-weight: 900;
-    font-size: 2.6em;
+    font-weight: 800;
+    font-size: 2.7em;
     line-height: 1;
     color: var(--Very-dark-blue);
     margin: .3em 0em 0em 0em;
@@ -104,7 +104,7 @@ footer{
 }
 
 .first button{
-    background-color: var(--Soft-orange);
+    background-color: var(--Soft-red);
     border: none;
     width: 50%;
     height: 3em;
@@ -307,6 +307,7 @@ footer{
 
     h1{
         font-size: 4em;
+        
     }
 
     .first p {
