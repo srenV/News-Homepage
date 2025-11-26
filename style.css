@@ -22,7 +22,7 @@
 *{
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-   scrollbar-width: none;
+  scrollbar-width: none;
 }
 
 /* Heading styles */
@@ -84,7 +84,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 4em;
-    /* filter: blur(1em); */
+    transition: all 0.3s ease;
 }
 
 /* Footer section */
@@ -181,19 +181,26 @@ footer{
     scale: 150%;
 }
 
+.menuBtn:hover{
+    background-color: rgb(234, 234, 234)
+}
+
 /* Mobile menu drawer */
 .menu{
-    display: none;
+    display: flex;
     flex-direction: column;
-    height: 100dvh;
+    height: 120dvh;
     width: 70%;
-    position: absolute;
+    position: fixed;
     right: 0;
     background-color: var(--Off-white);
     gap: 1em;
     margin: -1em;
     padding-top: 8em;
+    transform: translateX(20em);
+    transition: all 0.5s ease-in-out;
 }
+
 
 .menu a{
     text-decoration: none;
@@ -206,8 +213,8 @@ footer{
 
 .menuCloseBtn {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 2em;
+    right: 2em;
     border: none;
 }
 
@@ -256,6 +263,8 @@ footer{
     header{
         width: 75%;
         margin-bottom: 1em;
+        position: sticky;
+        z-index: 1;
     }
 
     header img{
@@ -282,6 +291,7 @@ footer{
     gap: 2em;
     margin: 0;
     padding-top: 0;
+    transform: none;
     }
 
     /* Desktop grid layout: hero section + sidebar + articles */
@@ -296,16 +306,16 @@ footer{
     }
 
     h1{
-        font-size: 3em;
+        font-size: 4em;
     }
 
     .first p {
-        font-size: .85em;
+        font-size: 1em;
         margin-bottom: 1.5em;
     }
 
     .first button{
-        height: 2.5em;
+        height: 3em;
         font-size: 1em;
         font-weight: 700;
         cursor: pointer;
@@ -314,6 +324,16 @@ footer{
     /* Hero section area */
     .first{
         grid-area: first;
+    }
+
+    .firstLower{
+        gap: 2em;
+    }
+
+    .firstRight{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .firstLower{
@@ -370,5 +390,13 @@ footer{
     footer{
         position: absolute;
         bottom: 0;
+    }
+
+    
+}
+
+@media (min-width: 1450px) {
+    .first p {
+        font-size: 1.3em;
     }
 }

@@ -1,14 +1,16 @@
-/* ============================================================
-   NEWS HOMEPAGE - Main JavaScript
-   ============================================================
-   
-   Mobile menu interaction handler
-   Manages opening and closing of mobile navigation menu
-*/
-
-// Mobile menu toggle functionality
-const menuBtn = document.querySelector('.menuBtn');
+const menuBtn = document.getElementById('menuBtn');
 const menuCloseBtn = document.querySelector('.menuCloseBtn');
-const menu = document.querySelector('.menu');
+const menu = document.getElementById('menu');
+const main = document.querySelector('main')
 
-// Event listeners for mobile menu
+menuBtn.addEventListener('click', () => {
+    menu.style.transform = 'translateX(0em)';
+    main.style.filter = 'blur(1em)'
+
+});
+
+menuCloseBtn.addEventListener('click', () => {
+    menu.style.transform = 'translateX(20em)';
+    main.style.filter = 'blur(0em)'
+});
+
